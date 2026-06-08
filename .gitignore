@@ -1,0 +1,6 @@
+node_modules
+backend/.env
+frontend/node_modules
+frontend/.cache
+**/.cache
+**node_modules**
