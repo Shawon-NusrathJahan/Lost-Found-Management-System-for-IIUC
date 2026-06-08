@@ -18,6 +18,10 @@ const register = async (req, res) => {
     return res.status(400).json({ message: "Passwords do not match ❌" });
   }
 
+  if (!email.endsWith('@ugrad.iiuc.ac.bd')) {
+    return res.status(400).json({ message: "Only IIUC university email allowed ❌" });
+  }
+
   try {
     const existingEmail = await User.findOne({ where: { email } });
     if (existingEmail) {
