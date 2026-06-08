@@ -27,21 +27,39 @@ function Register() {
     setError('');
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match!');
+  if (formData.password !== formData.confirmPassword) {
+    setError('Passwords do not match!');
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    const response = await fetch('http://localhost:5000/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setError(data.message);
+      setLoading(false);
       return;
     }
 
-    setLoading(true);
+    localStorage.setItem('token', data.token);
+    navigate('/login');
 
-    setTimeout(() => {
-      setLoading(false);
-      navigate('/login');
-    }, 1000);
-  };
+  } catch (err) {
+    setError('Server error. Please try again.');
+    setLoading(false);
+  }
+};
 
   return (
     <div className="auth-container">

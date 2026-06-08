@@ -21,16 +21,38 @@ function Login() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    setLoading(true);
+  try {
+    const response = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-    setTimeout(() => {
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.message || "Invalid email or password");
       setLoading(false);
-      navigate('/dashboard');
-    }, 1000);
-  };
+      return;
+    }
+
+    // Save token
+    localStorage.setItem("token", data.token);
+
+    // Navigate to dashboard
+    navigate("/dashboard");
+
+  } catch (error) {
+    console.error("Login error:", error);
+    alert("Server error, try again later");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="auth-container">
