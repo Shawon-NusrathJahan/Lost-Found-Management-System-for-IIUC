@@ -9,7 +9,7 @@ import "./ReportFoundItem.css";
 const STEPS = [
   { title: "Basic Information", subtitle: "Where & when you found it" },
   { title: "Item Details", subtitle: "Describe the item" },
-  { title: "Photos", subtitle: "Add up to 4 images" },
+  { title: "Photos", subtitle: "Add up to 4 documents (JPG, JPEG, PNG, PDF)" },
 ];
 
 const CURRENTLY_WITH_OPTIONS = [
@@ -55,7 +55,7 @@ function ReportFoundItem() {
   };
 
   const goNext = () => {
-    if (currentStep === 1 && (!formData.dateLost || !formData.locationId)) {
+    if (currentStep === 1 && (!formData.dateFound || !formData.locationId || !formData.currentlyWith)) {
         setError("Please fill in all required fields.");
         return;
     }

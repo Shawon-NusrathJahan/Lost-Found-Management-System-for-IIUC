@@ -9,7 +9,7 @@ import "./ReportLostItem.css";
 const STEPS = [
   { title: "Basic Information", subtitle: "Where & when you lost it" },
   { title: "Item Details", subtitle: "Describe your item" },
-  { title: "Photos", subtitle: "Add up to 4 images" },
+  { title: "Photos", subtitle: "Add up to 4 documents (JPG, JPEG, PNG, PDF)" },
 ];
 
 function ReportLostItem() {
@@ -47,7 +47,7 @@ function ReportLostItem() {
   };
 
   const goNext = () => {
-    if (currentStep === 1 && (!formData.dateFound || !formData.locationId || !formData.currentlyWith)) {
+    if (currentStep === 1 && (!formData.dateLost || !formData.locationId)) {
         setError("Please fill in all required fields.");
         return;
     }

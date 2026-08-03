@@ -9,12 +9,14 @@ const authRoutes = require("./routes/authRoutes");
 const itemRoutes = require("./routes/itemRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const locationRoutes = require("./routes/locationRoutes");
+const claimRoutes = require("./routes/claimRoutes");
 
 // Models import
 require("./models/Category");
 require("./models/Location");
 require("./models/LostItem");
 require("./models/FoundItem");
+require("./models/Claim");
 
 connectDB();
 
@@ -27,6 +29,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/items", itemRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/locations", locationRoutes);
+app.use("/api/claims", claimRoutes);
 
 app.get("/", (req, res) => {
   res.send("CampusFind API Running 🚀");

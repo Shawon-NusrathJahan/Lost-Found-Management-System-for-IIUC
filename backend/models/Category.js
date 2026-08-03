@@ -12,6 +12,10 @@ const Category = sequelize.define("Category", {
     allowNull: false,
     unique: true,
   },
+  isSensitive: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+  }
 }, {
   tableName: "categories",
   timestamps: false,

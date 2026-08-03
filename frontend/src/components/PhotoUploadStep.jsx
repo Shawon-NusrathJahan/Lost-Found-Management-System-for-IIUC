@@ -6,9 +6,9 @@ function PhotoUploadStep({
   files,
   onFilesChange,
   maxFiles = 4,
-  acceptedTypes = "image/jpeg,image/png",
+  acceptedTypes = "image/jpeg,image/png,application/pdf",
   label = "Drag & drop photos here",
-  helperText = "Up to 4 images (JPG, PNG) • Max 5MB each",
+  helperText = "Up to 4 images (JPG, JPEG, PNG, PDF) • Max 5MB each",
 }) {
   const inputRef = useRef(null);
 
@@ -60,20 +60,31 @@ function PhotoUploadStep({
 
       {files.length > 0 && (
         <div className="cf-photo-previews">
-          {files.map((file, index) => (
+            {files.map((file, index) => (
             <div className="cf-photo-preview" key={index}>
-              <img src={URL.createObjectURL(file)} alt={`upload-${index}`} />
-              <button
+                {file.type === "application/pdf" ? (
+                <div className="cf-photo-pdf">
+                    <span>PDF</span>
+                    <small>{file.name}</small>
+                </div>
+                ) : (
+                <img
+                    src={URL.createObjectURL(file)}
+                    alt={`upload-${index}`}
+                />
+                )}
+
+                <button
                 type="button"
                 className="cf-photo-remove"
                 onClick={() => handleRemove(index)}
-              >
+                >
                 <X size={14} />
-              </button>
+                </button>
             </div>
-          ))}
+            ))}
         </div>
-      )}
+       )}
     </div>
   );
 }

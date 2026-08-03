@@ -1,0 +1,184 @@
+.cf-claim-page {
+  background: #faf9fd;
+  min-height: 100vh;
+}
+
+.cf-claim-header {
+  padding: 24px 40px 0;
+}
+
+.cf-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #4F18DC;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+.cf-claim-header h1 {
+  margin: 0 0 6px;
+  font-size: 32px;
+  color: #1a1a1a;
+}
+
+.cf-claim-header p {
+  margin: 0;
+  color: #666;
+}
+
+.cf-claim-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  padding: 24px 40px 60px;
+  align-items: start;
+}
+
+.cf-claim-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cf-form-section {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.cf-upload-box {
+  border: 2px dashed #d7c7ff;
+  border-radius: 14px;
+  padding: 32px;
+  text-align: center;
+  background: #faf7ff;
+}
+
+.cf-upload-note {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #777;
+}
+
+.cf-uploaded-list {
+  margin-top: 16px;
+  padding: 18px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fafafa;
+  color: #777;
+  text-align: center;
+}
+
+.cf-review-box {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 18px;
+  background: #fafafa;
+}
+
+.cf-review-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cf-review-item:last-child {
+  border-bottom: none;
+}
+
+.cf-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.cf-actions-right {
+  display: flex;
+  gap: 12px;
+}
+
+.cf-claim-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cf-sidebar-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.cf-sidebar-card h4 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: #222;
+}
+
+.cf-item-image {
+  margin-bottom: 16px;
+}
+
+.cf-image-placeholder {
+  height: 180px;
+  border-radius: 12px;
+  background: #f2ecff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4F18DC;
+  font-weight: 600;
+}
+
+.cf-sidebar-card h5 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  color: #1a1a1a;
+}
+
+.cf-process-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #555;
+}
+
+.cf-process-list li {
+  margin-bottom: 12px;
+}
+
+.cf-full-width {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .cf-claim-body {
+    grid-template-columns: 1fr;
+  }
+
+  .cf-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cf-radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cf-radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}

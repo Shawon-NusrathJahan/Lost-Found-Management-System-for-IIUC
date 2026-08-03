@@ -31,7 +31,7 @@ const FoundItem = sequelize.define("FoundItem", {
     allowNull: true,
   },
   status: {
-    type: DataTypes.ENUM("pending", "active", "claimed", "recovered"),
+    type: DataTypes.ENUM("pending", "active", "approved"),
     defaultValue: "pending",
   },
   userId: {

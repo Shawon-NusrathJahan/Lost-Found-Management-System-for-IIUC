@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import LostItems from './pages/LostItems';
 import ReportLostItem from './pages/ReportLostItem';
 import ReportFoundItem from './pages/ReportFoundItem';
+import ClaimForm from "./pages/ClaimForm";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/lost-items" element={<LostItems />} />
         <Route path="/report-lost" element={<ReportLostItem />} />
         <Route path="/report-found" element={<ReportFoundItem />} />
+        <Route path="/claim" element={<ClaimForm />} />
       </Routes>
     </BrowserRouter>
   );
