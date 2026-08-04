@@ -177,7 +177,7 @@ function ClaimForm() {
               </div>
 
               <div className="cf-form-group">
-                <label>Additional Details (unique to this item, if possible)</label>
+                <label>Additional Details</label>
                 <textarea
                   name="insideItem"
                   placeholder="e.g., ID card, keys, cash"
