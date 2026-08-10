@@ -6,7 +6,7 @@
 
 **Backend / API:** [BACKEND_DEPLOYMENT_URL](https://git-lfms.onrender.com/)
 
-**Figma Design:** [UI_DESIGN_URL]https://www.figma.com/design/oUpW1vSoTB25MhJSTw19M1/LFMS_IIUC?node-id=1919-1544&t=77uozHmxBS9SQypK-1
+**Figma Design:** [UI_DESIGN_URL](https://www.figma.com/design/oUpW1vSoTB25MhJSTw19M1/LFMS_IIUC?node-id=1919-1544&t=77uozHmxBS9SQypK-1)
 
 ---
 
@@ -65,7 +65,8 @@ The goal of the system is to make the traditional campus lost-and-found process 
 | API Communication | REST API |
 | Version Control | Git & GitHub |
 | Frontend Deployment | Vercel |
-| Backend Deployment | Railway |
+| Backend Deployment | Render |
+| Database Hosting | Aiven |
 | UI/UX Design | Figma |
 
 ---
@@ -74,20 +75,7 @@ The goal of the system is to make the traditional campus lost-and-found process 
 
 Campus Find follows a client-server architecture consisting of a React-based frontend, an Express.js backend, and a MySQL database.
 
-```text
-User / Admin
-     |
-     v
-React Frontend
-     |
-     | REST API
-     v
-Node.js + Express.js Backend
-     |
-     +-------------> MySQL Database
-     |
-     +-------------> Cloudinary
-```
+![System Architecture](screenshots/system-archiecture.png)
 
 ---
 
@@ -120,44 +108,6 @@ Node.js + Express.js Backend
 ### User Dashboard
 
 ![User Dashboard](screenshots/user_dashboard.png)
-
----
-
-## Project Structure
-
-```text
-Campus-Find/
-|
-|-- backend/
-|   |-- controllers/
-|   |-- models/
-|   |-- routes/
-|   |-- middleware/
-|   |-- config/
-|   |-- uploads/
-|   |-- server.js
-|   `-- package.json
-|
-|-- frontend/
-|   |-- public/
-|   |-- src/
-|   |   |-- components/
-|   |   |-- pages/
-|   |   |-- assets/
-|   |   `-- ...
-|   `-- package.json
-|
-|-- screenshots/
-|   |-- login.png
-|   |-- home.png
-|   |-- lost_items.jpeg
-|   |-- found_items.jpeg
-|   |-- report_lost.png
-|   |-- claim_submitted.jpeg
-|   `-- user_dashboard.png
-|
-`-- README.md
-```
 
 ---
 
@@ -243,26 +193,6 @@ For local development, configure the required variables in the appropriate envir
 
 ---
 
-## Deployment
-
-The application is deployed as separate frontend and backend services.
-
-### Frontend
-
-The React frontend is deployed using Vercel.
-
-**Live Frontend:** YOUR_FRONTEND_DEPLOYMENT_URL
-
-### Backend
-
-The Node.js and Express.js backend is deployed separately.
-
-**Backend API:** YOUR_BACKEND_DEPLOYMENT_URL
-
-The frontend communicates with the deployed backend through REST API endpoints.
-
----
-
 ## Database
 
 Campus Find uses MySQL as its relational database.
@@ -343,15 +273,6 @@ Developed as part of the Software Engineering project at the Department of Compu
 - Nusrath Jahan Shawon
 - Tasfia Ullah
 - Arifa Jahan
-
----
-
-## Design
-
-The UI/UX design and design concepts for Campus Find were developed in Figma.
-
-**Figma Design:**
-https://www.figma.com/design/oUpW1vSoTB25MhJSTw19M1/LFMS_IIUC?node-id=1919-1544&t=77uozHmxBS9SQypK-1
 
 ---
 
