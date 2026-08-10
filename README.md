@@ -1,4 +1,5 @@
-# Campus Find — Lost & Found Management System for IIUC
+# Campus Find
+*Lost & Found Management System for IIUC*
 
 > A web-based Lost & Found Management System designed to help students and university members report, search, claim, and manage lost and found items on campus.
 
