@@ -35,7 +35,7 @@ The goal of the system is to make the traditional campus lost-and-found process 
 - Submit claims for found items
 - Provide ownership evidence
 - Track claim status
-- View personal reported items
+- View personally reported items
 - View submitted claims
 - View resolved claims
 - Receive relevant notifications
@@ -61,7 +61,7 @@ The goal of the system is to make the traditional campus lost-and-found process 
 | Frontend | React.js |
 | Backend | Node.js, Express.js |
 | Database | MySQL |
-| Image Storage | Cloudinary |
+| Image Storage | Server |
 | API Communication | REST API |
 | Version Control | Git & GitHub |
 | Frontend Deployment | Vercel |
@@ -147,10 +147,6 @@ DB_HOST=your_database_host
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
 DB_NAME=your_database_name
-
-CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ```
 
 Start the backend server:
@@ -185,19 +181,13 @@ npm start
 
 ## Environment Variables
 
-Environment variables contain configuration and sensitive credentials required by the application.
-
-Do not commit `.env` files or API credentials to the repository.
-
-For local development, configure the required variables in the appropriate environment files for the frontend and backend.
+Environment variables contain configuration and sensitive credentials required by the application. Do not commit `.env` files or API credentials to the repository. For local development, configure the required variables in the appropriate environment files for the frontend and backend.
 
 ---
 
 ## Database
 
-Campus Find uses MySQL as its relational database.
-
-The database stores information related to:
+Campus Find uses MySQL as its relational database. The database stores information related to:
 
 - Users
 - Lost items
@@ -214,9 +204,7 @@ Database credentials are configured through environment variables and should not
 
 ## Image Storage
 
-Item images and uploaded files are handled using Cloudinary rather than being stored directly inside the source repository.
-
-This allows uploaded media to be managed separately from the application's source code and database.
+Uploaded item images are stored on the server, while their file paths are maintained in the database.
 
 ---
 
